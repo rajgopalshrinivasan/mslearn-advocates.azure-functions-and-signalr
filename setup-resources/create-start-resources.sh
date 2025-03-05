@@ -87,7 +87,7 @@ az cosmosdb sql container create \
     --account-name $COMSOSDB_NAME \
     --database-name stocksdb \
     --name stocks \
-    --partition-key-path /symbol
+    --partition-key-path "/symbol"
 
 printf "Get storage connection string\n"
 
@@ -98,7 +98,7 @@ STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
 --resource-group $RESOURCE_GROUP_NAME \
 --query "connectionString" -o tsv)
 
-printf "Get account name \n" 
+printf "Get account name \n"
 
 COSMOSDB_ACCOUNT_NAME=$(az cosmosdb list \
     --subscription "$SUBSCRIPTION_NAME" \
